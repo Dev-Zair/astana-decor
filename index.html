@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт коттеджей и квартир</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: serif;
+            background-color: #ffffff;
+            color: #3e2723;
+            padding-top: 70px;
+            font-family: serif;
+        }
+
+        .navbar {
+            background-color: #3e2723 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            margin-right: 15px;
+        }
+
+        .hero-section {
+            background-color: #3e2723;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .projects-section, .contact-section {
+            background-color: #ffffff;
+            color: #3e2723;
+            padding: 60px 20px;
+        }
+    
+        .about-section, .testimonials-section {
+            background-color: #f5f5f5;
+            color: #3e2723;
+            padding: 60px 20px;
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #3e2723;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        button, .btn {
+            background-color: #3e2723;
+            color: white;
+            border: none;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #5d4037;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .project-card h5 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #3e2723;
+        }
+        body {
+    font-family:serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding-top: 70px;
+}
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-section, .projects-section, .testimonials-section, .contact-section {
+    padding: 60px 20px;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    display: none;
+}
+.project-card {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    background-color: #ad7469;
+    
+}
+
+.project-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.video-section {
+    background-color: #000; 
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.video-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    padding: 10px 0;
+    scrollbar-width: none; 
+}
+
+.video-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.video-carousel iframe {
+    width: 320px; 
+    height: 180px; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+}
+
+.video-carousel iframe:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); 
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .video-carousel {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .video-carousel iframe {
+        width: 90%;
+        height: auto;
+    }
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; 
+}
+@media (max-width: 768px) {
+    .map-container {
+        padding-bottom: 75%;
+    }
+}
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+video {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+video:hover {
+    transform: scale(1.05);
+}
+.hero-section .btn {
+    background-color: white;  
+    color: #5d4037;             
+    padding: 15px 30px;         
+    font-size: 18px;            
+    border: none;             
+    border-radius: 8px;       
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px; 
+    font-family: serif;        
+}
+
+.hero-section .btn:hover {
+    background-color: #9c7a74;  
+    transform: scale(1.05);     
+}
+
+.pricing-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #3e2723;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+.contact-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: left;
+    font-family: serif;
+    line-height: 1.6;
+}
+
+.contact-section a {
+    color: #007bff; /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 5px; /* Отступ между текстом и ссылкой */
+}
+
+.contact-section a:hover {
+    color: #0056b3; /* Изменение цвета при наведении */
+    text-decoration: underline;
+}
+
+/* Для адаптации на мобильных устройствах */
+@media (max-width: 768px) {
+    .contact-section p {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .contact-section a {
+        margin-left: 5px; /* Немного отступа между текстом и ссылкой */
+    }
+}
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 28px; /* Уменьшение размера текста */
+        line-height: 1.3; /* Уменьшение высоты строки */
+        word-wrap: break-word; /* Перенос слов при необходимости */
+        text-align: center; /* Выравнивание по центру */
+        padding: 0 10px; /* Отступы с боков */
+    }
+
+    .hero-section p {
+        font-size: 14px; /* Уменьшение размера текста для описания */
+        padding: 0 15px;
+    }
+
+    .container {
+        max-width: 100%; /* Заполнение всей ширины экрана */
+        padding: 0 10px;  /* Отступы по бокам для предотвращения обрезания текста */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ТОО "Декор Астана"</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Наши проекты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+                <button class="btn ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+                <div class="container">
+                    <h1>Качественный ремонт коттеджей и квартир</h1>
+                    <p>Профессиональный подход и индивидуальные решения для вашего дома.</p>
+                    <button class="btn ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+                </div>
+            </header>
+        </div>
+    </header>
+    
+    
+
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <p>ТОО «Декор Астана» — ведущая компания, специализирующаяся на профессиональном ремонте коттеджей и квартир. Мы предлагаем широкий спектр услуг: от косметического до капитального ремонта. Наша команда опытных специалистов использует современные технологии и материалы, гарантируя высокое качество и долговечность работ. Индивидуальный подход к каждому проекту позволяет создать комфортное и стильное пространство, полностью соответствующее пожеланиям клиентов. Доверьте ремонт профессионалам ТОО «Декор Астана»!</p>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Наши проекты</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpeg" alt="Проект 1">
+                    <h5>Современный фасад</h5>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpeg" alt="Проект 2">
+                    <h5>Элегантный интерьер</h5>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpeg" alt="Проект 3">
+                    <h5>Светлый коридор</h5>
+                </div>
+                <div class="project-card">
+                    <img src="project4.jpeg" alt="Проект 4">
+                    <h5>Уютная терраса</h5>
+                </div>
+                <div class="project-card">
+                    <img src="project5.jpeg" alt="Проект 5">
+                    <h5>Просторная веранда</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+    <h2>Отзывы наших клиентов</h2>
+    <div class="video-carousel">
+        <video controls playsinline>
+            <source src="WhatsApp Video 2025-01-29 at 22.22.33(1).mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        
+        <video controls playsinline>
+            <source src="WhatsApp Video 2025-01-29 at 22.22.33(2).mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        
+        <video controls playsinline>
+            <source src="WhatsApp Video 2025-01-29 at 22.22.33.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+</div>
+    </section>
+    
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Цена на ремонт 13 этажа</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Наименование работ</th>
+                            <th>Ед. изм.</th>
+                            <th>Кол-во</th>
+                            <th>Цена за ед. материала (тг)</th>
+                            <th>Стоимость материала (тг)</th>
+                            <th>Цена ед. работы (тг)</th>
+                            <th>Стоимость (тг)</th>
+                            <th>Итоговая сумма (тг)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Демонтажные работы</td>
+                            <td>М2</td>
+                            <td>245</td>
+                            <td>2000</td>
+                            <td>490,000</td>
+                            <td>6,500</td>
+                            <td>1,592,500</td>
+                            <td>2,082,500</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Устройство ГКЛ стен</td>
+                            <td>М2</td>
+                            <td>458</td>
+                            <td>3,500</td>
+                            <td>1,603,000</td>
+                            <td>5,200</td>
+                            <td>2,381,600</td>
+                            <td>3,984,600</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Электричество с установкой</td>
+                            <td>М2</td>
+                            <td>245</td>
+                            <td>5,000</td>
+                            <td>1,225,000</td>
+                            <td>8,000</td>
+                            <td>1,960,000</td>
+                            <td>3,185,000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Устройство ламината</td>
+                            <td>М2</td>
+                            <td>245</td>
+                            <td>3,000</td>
+                            <td>735,000</td>
+                            <td>3,000</td>
+                            <td>735,000</td>
+                            <td>1,470,000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Чистовые работы (шпаклевка и покраска)</td>
+                            <td>М2</td>
+                            <td>650</td>
+                            <td>3,200</td>
+                            <td>2,088,000</td>
+                            <td>4,500</td>
+                            <td>2,925,000</td>
+                            <td>5,005,000</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Установка электрики</td>
+                            <td>М2</td>
+                            <td>245</td>
+                            <td>4,500</td>
+                            <td>1,102,500</td>
+                            <td>3,500</td>
+                            <td>857,500</td>
+                            <td>1,960,000</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><strong>Скидка</strong></td>
+                            <td>932,100</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><strong>Итого без НДС</strong></td>
+                            <td><strong>17,000,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps?q=51.1694,71.4491&hl=ru&z=15&output=embed" 
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Контакты</h2>
+            
+            <p>Позвоните нам: 
+                <a href="tel:+77012365696">+7 (701) 236-56-96</a>
+            </p>
+    
+            <p>Наш адрес: 
+                <a href="https://www.google.com/maps?q=51.1694,71.4491" target="_blank">
+                    г. Астана, ул. Достык, дом 18 (офис 2, 29)
+                </a>
+            </p>
+    
+            <p>Электронный адрес: 
+                <a href="mailto:aziya.evropa2030@list.ru">aziya.evropa2030@list.ru</a>
+            </p>
+        </div>
+    </section>
+    
+
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Связаться с нами</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" name="name" placeholder="Имя" aria-required="true" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" name="phone" class="form-control" id="phone" placeholder="+7" aria-required="true" required>
+                        </div>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onscroll = function() {
+            document.getElementById("scrollTopBtn").style.display = 
+                (document.documentElement.scrollTop > 100) ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+<script>
+    // Кнопка "Наверх"
+    window.onscroll = function() {
+        document.getElementById("scrollTopBtn").style.display = 
+            (document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Отправка данных в Telegram
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        
+        if (name === '' || phone === '') {
+            alert('Пожалуйста, заполните все поля!');
+            return;
+        }
+        
+        const token = '8162674413:AAG1jVHXbqB2o9apTM-OHGPkEiOXTuOgGNo';
+        const chatId = '-1002447076096'; 
+        const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}`;
+
+        console.log('Отправка данных:', { chat_id: chatId, text: message });
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text: message })
+        })
+        .then(response => {
+            console.log('HTTP-статус:', response.status); 
+            return response.json();
+        })
+        .then(data => {
+            console.log('Ответ Telegram API:', data);
+            if (data.ok) {
+                alert('Заявка успешно отправлена!');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert(`Ошибка: ${data.description}`);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при отправке:', error);
+            alert(`Ошибка при отправке: ${error.message}`);
+        });
+    });
+</script>
+</body>
+</html>

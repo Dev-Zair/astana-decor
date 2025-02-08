@@ -252,51 +252,6 @@ video:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    font-size: 14px;
-}
-
-th, td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #3e2723;
-    color: white;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-@media (max-width: 768px) {
-    th, td {
-        padding: 8px;
-        font-size: 12px;
-    }
-}
-.contact-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    text-align: left;
-    font-family: serif;
-    line-height: 1.6;
-}
-
 .contact-section a {
     color: #007bff; /* Цвет ссылок */
     text-decoration: none;
@@ -339,10 +294,79 @@ tr:nth-child(even) {
         max-width: 100%; /* Заполнение всей ширины экрана */
         padding: 0 10px;  /* Отступы по бокам для предотвращения обрезания текста */
     }
+
+    .load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3e2723;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.load-more-btn:hover {
+    background-color: #5d4037;
+    transform: scale(1.05);
+}
 
+}
 
+.project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .project-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .project-card h5 {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #3e2723;
+    }
+
+    .load-more-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #3e2723;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .load-more-btn:hover {
+        background-color: #5d4037;
+        transform: scale(1.05);
+    }
+
+    /* Yangi suratlar uchun */
+    .new-projects {
+        display: none; /* Avval yashirin bo'ladi */
+    }
     </style>
 </head>
 <body>
@@ -395,7 +419,7 @@ tr:nth-child(even) {
     <section class="projects-section" id="projects">
         <div class="container">
             <h2 style="margin-bottom: 30px;">Наши проекты</h2>
-            <div class="project-grid">
+            <div class="project-grid" id="projectGrid">
                 <div class="project-card">
                     <img src="project1.jpeg" alt="Проект 1">
                     <h5>Современный фасад</h5>
@@ -417,9 +441,10 @@ tr:nth-child(even) {
                     <h5>Просторная веранда</h5>
                 </div>
             </div>
+            <button id="toggleBtn" class="btn load-more-btn">Еще</button>
         </div>
     </section>
-
+    
     <section class="video-section">
         <div class="container">
     <h2>Отзывы наших клиентов</h2>
@@ -441,107 +466,7 @@ tr:nth-child(even) {
     </div>
 </div>
     </section>
-    
-    <section class="pricing-section">
-        <div class="container">
-            <h2>Цена на ремонт 13 этажа</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>Наименование работ</th>
-                            <th>Ед. изм.</th>
-                            <th>Кол-во</th>
-                            <th>Цена за ед. материала (тг)</th>
-                            <th>Стоимость материала (тг)</th>
-                            <th>Цена ед. работы (тг)</th>
-                            <th>Стоимость (тг)</th>
-                            <th>Итоговая сумма (тг)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Демонтажные работы</td>
-                            <td>М2</td>
-                            <td>245</td>
-                            <td>2000</td>
-                            <td>490,000</td>
-                            <td>6,500</td>
-                            <td>1,592,500</td>
-                            <td>2,082,500</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Устройство ГКЛ стен</td>
-                            <td>М2</td>
-                            <td>458</td>
-                            <td>3,500</td>
-                            <td>1,603,000</td>
-                            <td>5,200</td>
-                            <td>2,381,600</td>
-                            <td>3,984,600</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Электричество с установкой</td>
-                            <td>М2</td>
-                            <td>245</td>
-                            <td>5,000</td>
-                            <td>1,225,000</td>
-                            <td>8,000</td>
-                            <td>1,960,000</td>
-                            <td>3,185,000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Устройство ламината</td>
-                            <td>М2</td>
-                            <td>245</td>
-                            <td>3,000</td>
-                            <td>735,000</td>
-                            <td>3,000</td>
-                            <td>735,000</td>
-                            <td>1,470,000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Чистовые работы (шпаклевка и покраска)</td>
-                            <td>М2</td>
-                            <td>650</td>
-                            <td>3,200</td>
-                            <td>2,088,000</td>
-                            <td>4,500</td>
-                            <td>2,925,000</td>
-                            <td>5,005,000</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Установка электрики</td>
-                            <td>М2</td>
-                            <td>245</td>
-                            <td>4,500</td>
-                            <td>1,102,500</td>
-                            <td>3,500</td>
-                            <td>857,500</td>
-                            <td>1,960,000</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8"><strong>Скидка</strong></td>
-                            <td>932,100</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8"><strong>Итого без НДС</strong></td>
-                            <td><strong>17,000,000</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
-
+        
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="map-container">
@@ -659,6 +584,44 @@ tr:nth-child(even) {
             console.error('Ошибка при отправке:', error);
             alert(`Ошибка при отправке: ${error.message}`);
         });
+    });
+</script>
+
+<script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const projectGrid = document.getElementById('projectGrid');
+    let projectsAdded = false; // Yangi suratlar qo'shilganini tekshirish uchun
+
+    const newProjects = [
+        { src: 'project1.jpeg', title: 'Минималистичный дизайн' },
+        { src: 'project2.jpeg', title: 'Роскошная спальня' },
+        { src: 'project3.jpeg', title: 'Офисное пространство' },
+        { src: 'project4.jpeg', title: 'Кухонный интерьер' },
+        { src: 'project5.jpeg', title: 'Балкон с видом' }
+    ];
+
+    toggleBtn.addEventListener('click', function() {
+        if (!projectsAdded) {
+            // Suratlarni qo'shish
+            newProjects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card new-projects';
+                projectCard.innerHTML = `
+                    <img src="${project.src}" alt="${project.title}">
+                    <h5>${project.title}</h5>
+                `;
+                projectGrid.appendChild(projectCard);
+            });
+
+            document.querySelectorAll('.new-projects').forEach(item => item.style.display = 'block');
+            toggleBtn.textContent = 'Скрыть'; // Tugmani matnini o'zgartirish
+            projectsAdded = true;
+        } else {
+            // Suratlarni yashirish
+            document.querySelectorAll('.new-projects').forEach(item => item.style.display = 'none');
+            toggleBtn.textContent = 'Еще'; // Tugmani yana qaytarish
+            projectsAdded = false;
+        }
     });
 </script>
 </body>
